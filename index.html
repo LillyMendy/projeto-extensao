@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Protagonista na História da Tecnologia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .flyer {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            position: relative;
+            z-index: 1;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .courses {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .course-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            background: linear-gradient(to right, #f8f9ff 0%, #ffffff 100%);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .course-card h3 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-card p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .course-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .course-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+        }
+
+        .footer {
+            background: #f5f5f5;
+            padding: 30px 40px;
+            text-align: center;
+            color: #666;
+            border-top: 3px solid #667eea;
+        }
+
+        .footer h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-box h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Imprimir Folheto</button>
+
+    <div class="flyer">
+        <div class="header">
+            <h1>🚀 Seja Protagonista na História da Tecnologia</h1>
+            <p>Transforme seu futuro com cursos gratuitos de qualidade</p>
+        </div>
+
+        <div class="content">
+            <div class="intro">
+                <p><strong>A tecnologia está moldando o futuro</strong>, e você pode fazer parte dessa transformação! 
+                Aproveite essa oportunidade única de aprender com os melhores cursos gratuitos disponíveis online.</p>
+            </div>
+
+            <div class="cta-box">
+                <h2>✨ 100% Gratuito | 🎓 Certificado | ⏰ No seu ritmo</h2>
+            </div>
+
+            <div class="courses">
+                <div class="course-card">
+                    <h3><span class="icon">💻</span> Google Ateliê Digital</h3>
+                    <p>Aprenda marketing digital, desenvolvimento web, análise de dados e muito mais com certificação gratuita do Google.</p>
+                    <a href="https://ateliedigital.withgoogle.com" class="course-link">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card">
+                    <h3><span class="icon">🎯</span> Coursera</h3>
+                    <p>Acesse cursos de universidades renomadas como USP, Stanford e Google. Diversas áreas da tecnologia com opção de certificado gratuito.</p>
+                    <a href="https://www.coursera.org" class="course-link">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card">
+                    <h3><span class="icon">🔥</span> DIO - Digital Innovation One</h3>
+                    <p>Bootcamps gratuitos em programação, cloud computing, IA e muito mais. Conecte-se com o mercado de trabalho.</p>
+                    <a href="https://www.dio.me" class="course-link">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card">
+                    <h3><span class="icon">🌟</span> Fundação Bradesco</h3>
+                    <p>Mais de 100 cursos gratuitos em tecnologia, programação, banco de dados e desenvolvimento de sistemas.</p>
+                    <a href="https://www.ev.org.br" class="course-link">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card">
+                    <h3><span class="icon">🚀</span> Microsoft Learn</h3>
+                    <p>Aprenda sobre Azure, IA, desenvolvimento de software e muito mais direto da Microsoft, com certificações reconhecidas.</p>
+                    <a href="https://learn.microsoft.com/pt-br" class="course-link">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card">
+                    <h3><span class="icon">📱</span> SENAI EAD</h3>
+                    <p>Cursos técnicos e de qualificação profissional em tecnologia, indústria 4.0 e automação.</p>
+                    <a href="https://www.mundosenai.com.br" class="course-link">Inscreva-se Agora →</a>
+                </div>
+            </div>
+
+            <div class="cta-box" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">
+                <h2>👩‍💻 Programas Especiais para Mulheres na Tecnologia</h2>
+                <p style="margin-top: 10px;">Empoderamento feminino através da educação tecnológica</p>
+            </div>
+
+            <div class="courses">
+                <div class="course-card" style="border-color: #ec4899; background: linear-gradient(to right, #fdf2f8 0%, #ffffff 100%);">
+                    <h3><span class="icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">💜</span> {reprograma}</h3>
+                    <p>Bootcamp intensivo de programação para mulheres em situação de vulnerabilidade social. Foco em desenvolvimento web e empregabilidade.</p>
+                    <a href="https://www.reprograma.com.br" class="course-link" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card" style="border-color: #ec4899; background: linear-gradient(to right, #fdf2f8 0%, #ffffff 100%);">
+                    <h3><span class="icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">👩‍💼</span> PrograMaria</h3>
+                    <p>Cursos de tecnologia, programação e empreendedorismo digital focados em capacitar mulheres para o mercado tech.</p>
+                    <a href="https://www.programaria.org" class="course-link" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card" style="border-color: #ec4899; background: linear-gradient(to right, #fdf2f8 0%, #ffffff 100%);">
+                    <h3><span class="icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">🌸</span> Mulheres na Computação</h3>
+                    <p>Iniciativa da Sociedade Brasileira de Computação com cursos, mentorias e eventos para incentivar mulheres na área de TI.</p>
+                    <a href="https://www.sbc.org.br" class="course-link" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card" style="border-color: #ec4899; background: linear-gradient(to right, #fdf2f8 0%, #ffffff 100%);">
+                    <h3><span class="icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">⚡</span> WoMakersCode</h3>
+                    <p>Comunidade com bootcamps, cursos e eventos gratuitos para capacitar mulheres nas áreas de tecnologia e inovação.</p>
+                    <a href="https://womakerscode.org" class="course-link" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card" style="border-color: #ec4899; background: linear-gradient(to right, #fdf2f8 0%, #ffffff 100%);">
+                    <h3><span class="icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">🎓</span> Laboratória</h3>
+                    <p>Bootcamp gratuito de desenvolvimento web para mulheres latino-americanas, com foco em empregabilidade e transformação social.</p>
+                    <a href="https://www.laboratoria.la" class="course-link" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">Inscreva-se Agora →</a>
+                </div>
+
+                <div class="course-card" style="border-color: #ec4899; background: linear-gradient(to right, #fdf2f8 0%, #ffffff 100%);">
+                    <h3><span class="icon" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">🚀</span> Technovation Girls</h3>
+                    <p>Programa global que ensina meninas e mulheres a desenvolverem aplicativos mobile e se tornarem empreendedoras em tecnologia.</p>
+                    <a href="https://www.technovation.org" class="course-link" style="background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">Inscreva-se Agora →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>🎯 Não perca tempo!</h3>
+            <p>O futuro da tecnologia está em suas mãos. Comece hoje mesmo sua jornada de aprendizado.</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">
+                <strong>Dica:</strong> Escolha um curso que mais combine com seus objetivos e dedique pelo menos 30 minutos por dia ao estudo.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
